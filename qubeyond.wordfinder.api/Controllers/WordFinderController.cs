@@ -26,7 +26,7 @@ namespace qubeyond.wordfinder.api.Controllers
         ///  Sample Request:
         /// 
         ///   
-        ///        GET api/word-finder
+        ///        POST api/word-finder
         ///        
         ///        
         ///        {
