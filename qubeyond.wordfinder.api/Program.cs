@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.OpenApi.Models;
 using qubeyond.wordfinder.domain.Contracts.Cache;
 using qubeyond.wordfinder.domain.Contracts.Services;
 using qubeyond.wordfinder.domain.Contracts.Validators;
@@ -7,6 +8,7 @@ using qubeyond.wordfinder.domain.Services;
 using quebeyond.wordfinder.infraestructure.Cache;
 using quebeyond.wordfinder.infraestructure.Validation;
 using StackExchange.Redis;
+using System.Reflection;
 
 namespace qubeyond.wordfinder.api
 {
@@ -27,7 +29,13 @@ namespace qubeyond.wordfinder.api
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Qu Beyond Word Finder Challenge API", Version = "v1" });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
             var app = builder.Build();
             /*
