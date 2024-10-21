@@ -30,7 +30,7 @@ Ready to fire things up locally? Just follow these simple steps:
    ```bash
    docker-compose up --build
 
-3. If you want to run with Postman this is the URL: https://localhost:3001/api/word-finder , set POST and if you need a sample
+3. If you want to run it with Postman this is the URL: https://localhost:3001/api/word-finder , set POST and if you need a sample
    ```bash
    {
      "matrix":["snow", "cold", "cold", "s1ow", "snow"],
