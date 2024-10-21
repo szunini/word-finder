@@ -30,6 +30,12 @@ Ready to fire things up locally? Just follow these simple steps:
    ```bash
    docker-compose up --build
 
+3. If you want to run with Postman this is the URL: https://localhost:3001/api/word-finder , set POST and if you need a sample
+   ```bash
+   {
+     "matrix":["snow", "cold", "cold", "s1ow", "snow"],
+     "wordStream": [ "cold","told","snow","cold"]
+   }
 ## Possible Improvements
  I’ve implemented two versions of the solution: one that sticks to the original requirements and another that brings in some improvements with FluentValidation.
  
