@@ -1,0 +1,14 @@
+services:
+  qubeyond.wordfinder.api:
+    image: ${DOCKER_REGISTRY-}qubeyondwordfinderapi
+    build:
+      context: .
+      dockerfile: qubeyond.wordfinder.api/Dockerfile
+    depends_on:
+      - "redis"
+
+  redis:
+    container_name: rediscache
+    image: redis:alpine
+    ports:
+      - "127.0.0.1:6379:6379"

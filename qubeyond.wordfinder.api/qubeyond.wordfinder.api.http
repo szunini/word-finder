@@ -1,0 +1,6 @@
+@qubeyond.wordfinder.api_HostAddress = http://localhost:5235
+
+GET {{qubeyond.wordfinder.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
